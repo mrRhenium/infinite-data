@@ -12,9 +12,9 @@ const scroll_effect = async () => {
     const comment_data = `${json[count].body}`;
     const data = `
      <div class="row border m-3 border-info">
-       <div class="col-md-1 border border-info text-light text-center  display-4">${count++}.
+       <div class="col-sm-2 col-lg-1 border border-info text-light text-center  display-4">${count++}.
        </div>
-       <div class="col-md-11">
+       <div class="col-sm-10 col-lg-11">
            <div class="row">
            <p class="text-center text-light">${comment_data}</p>
            </div>
@@ -24,15 +24,23 @@ const scroll_effect = async () => {
   }
 };
 
-// const container = document.querySelector("#container");
-
-//define the scroll function
-window.addEventListener("scroll", () => {
-  const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+// define the scroll fuction for container
+const container = document.querySelector("#container");
+container.addEventListener("scroll", () => {
+  const { scrollHeight, scrollTop, clientHeight } = container;
   if (scrollHeight <= scrollTop + clientHeight) {
     scroll_effect();
-    console.log(scrollHeight, scrollTop, clientHeight);
   }
+  console.log(scrollHeight + " " + scrollTop + " " + clientHeight);
 });
+
+//define the scroll function
+// window.addEventListener("scroll", () => {
+//   const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+//   if (scrollHeight <= scrollTop + clientHeight) {
+//     scroll_effect();
+//     console.log(scrollHeight, scrollTop, clientHeight);
+//   }
+// });
 
 scroll_effect();

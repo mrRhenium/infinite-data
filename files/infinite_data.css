@@ -3,14 +3,16 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* #container {
+#container {
+  margin-right: 2rem;
   padding: 2.5rem;
   height: 100vh;
   overflow-y: scroll;
-} */
+}
 ::-webkit-scrollbar {
   background-color: transparent;
   visibility: hidden;
+  /* margin-right: 2rem; */
 }
 ::-webkit-scrollbar-track {
   border-radius: 20px;

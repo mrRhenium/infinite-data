@@ -25,22 +25,22 @@ const scroll_effect = async () => {
 };
 
 // define the scroll fuction for container
-const container = document.querySelector("#container");
-container.addEventListener("scroll", () => {
-  const { scrollHeight, scrollTop, clientHeight } = container;
-  if (scrollHeight <= scrollTop + clientHeight) {
-    scroll_effect();
-  }
-  console.log(scrollHeight + " " + scrollTop + " " + clientHeight);
-});
-
-//define the scroll function
-// window.addEventListener("scroll", () => {
-//   const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+// const container = document.querySelector("#container");
+// container.addEventListener("scroll", () => {
+//   const { scrollHeight, scrollTop, clientHeight } = container;
 //   if (scrollHeight <= scrollTop + clientHeight) {
 //     scroll_effect();
-//     console.log(scrollHeight, scrollTop, clientHeight);
 //   }
+//   console.log(scrollHeight + " " + scrollTop + " " + clientHeight);
 // });
+
+// define the scroll function
+window.addEventListener("scroll", () => {
+  const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+  if (scrollHeight <= scrollTop + clientHeight) {
+    scroll_effect();
+    console.log(scrollHeight, scrollTop, clientHeight);
+  }
+});
 
 scroll_effect();
